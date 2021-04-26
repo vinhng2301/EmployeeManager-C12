@@ -19,22 +19,23 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public List<Employee> findAll() {
-        return employees    ;
+        return employees;
     }
 
     @Override
     public Employee findById(int id) {
-        return employees.get();
+        return employees.get(id);
     }
 
     @Override
     public boolean update(Employee employee) {
-
+        employees.add(employee);
         return false;
     }
 
     @Override
     public boolean save(Employee employee, int id) {
+        employees.set(id,employee);
         return false;
     }
 }
