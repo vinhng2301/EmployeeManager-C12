@@ -8,7 +8,7 @@ public class EmployeeForm {
     private int id;
     private String name;
 //    private Date date;
-    private int department_id;
+//    private int department_id;
     private MultipartFile avatar;
     private boolean gender;
 
@@ -17,23 +17,15 @@ public class EmployeeForm {
         this.name = name;
     }
 
-    public EmployeeForm(int id, String name, int department_id) {
+       public EmployeeForm(int id, String name, MultipartFile avatar) {
         this.id = id;
         this.name = name;
-        this.department_id = department_id;
-    }
-
-    public EmployeeForm(int id, String name, int department_id, MultipartFile avatar) {
-        this.id = id;
-        this.name = name;
-        this.department_id = department_id;
         this.avatar = avatar;
     }
 
-    public EmployeeForm(int id, String name, int department_id, MultipartFile avatar, boolean gender) {
+    public EmployeeForm(int id, String name, MultipartFile avatar, boolean gender) {
         this.id = id;
         this.name = name;
-        this.department_id = department_id;
         this.avatar = avatar;
         this.gender = gender;
     }
@@ -55,14 +47,6 @@ public class EmployeeForm {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getDepartment_id() {
-        return department_id;
-    }
-
-    public void setDepartment_id(int department_id) {
-        this.department_id = department_id;
     }
 
     public MultipartFile getAvatar() {

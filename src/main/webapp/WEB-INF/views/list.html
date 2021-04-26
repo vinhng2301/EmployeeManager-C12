@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>DS HV</h1>
+<a href="/employee/create">Tao moi</a>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Gender</td>
+        <td>Department id</td>
+    </tr>
+    <th:block th:each="s:${list}">
+        <tr>
+            <td th:text="${s.id}"></td>
+            <td th:text="${s.name}"></td>
+            <td th:text="${s.gender}"></td>
+            <td><img th:src="@{'i/'+ ${s.getAvatar()}}" width="100px" alt=""></td>
+            <td th:text="${s.department_id}"></td>
+            <td><a th:href="@{/students/edit/{id}(id=${s.getId()})}">Edit</a> </td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
