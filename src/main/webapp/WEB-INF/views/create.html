@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/students/">Tro ve danh sach</a>
+<h1>Form create</h1>
+    <span th:text="${mess}"></span>
+<form th:object="${s}" method="post" enctype="multipart/form-data">
+    <input th:field="*{id}"/>
+    <input th:field="*{name}">
+    <input type="file" placeholder="avatar" th:field="*{avatar}">
+    <select th:field="*{gender}">
+        <option th:value="M" th:text="Male"></option>
+        <option th:value="F" th:text="Female"></option>
+    </select>
+    <button type="submit">Create</button>
+</form>
+
+</body>
+</html>
